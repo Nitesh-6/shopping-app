@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, } from "react";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -6,6 +6,7 @@ import {
 import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.styles.scss";
 import Button from "../button/button.component";
+
 
 const defaultFormFields = {
   displayName: "",
@@ -17,13 +18,10 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPAssword } = formFields;
 
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // const resetFormFields = () => {
-
-    // };
-
     if (password !== confirmPAssword) {
       alert("passwords do not match");
       return;
